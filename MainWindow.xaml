@@ -8,8 +8,8 @@
         Title="MainWindow" Height="350" Width="525"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
+        TextElement.FontWeight="Light"
+        TextElement.FontSize="12"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
@@ -17,12 +17,19 @@
     <Window.Resources>
         <ResourceDictionary Source="pack://application:,,,/DesignTempaltesTest;component/Theme.xaml"/>
     </Window.Resources>
-    <Grid>
+    <Grid materialDesign:ShadowAssist.ShadowEdges="All" materialDesign:ShadowAssist.Darken="True" materialDesign:ShadowAssist.ShadowDepth="Depth3">
         <StackPanel Margin="16">
             <materialDesign:Card Padding="32">
                 <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
             </materialDesign:Card>
-            <TextBlock Padding="32" Foreground="{DynamicResource MaterialDesignColumnHeader}" Text="Test" />
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="AccountBox" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="Mixer" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="WindowMinimize" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Padding="32" Foreground="{DynamicResource PrimaryHueLightBrush}" Text="Test" />
+            <Slider Maximum="100" TickFrequency="5" Style="{DynamicResource MaterialDesignDiscreteSlider}" />
         </StackPanel>
     </Grid>
 </Window>
